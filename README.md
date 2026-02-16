@@ -3,7 +3,8 @@
 ## 🚀 Overview
 This project demonstrates a production-grade Data Engineering workflow using **PySpark** and **DuckDB**. It processes a dataset of 1.2 million Spotify tracks through a **Medallion Architecture**, transforming raw CSV data into an optimized, queryable analytical serving layer.
 
-
+## 📂 Deep Dive
+For a detailed breakdown of the trends and data quality observations, see the [Insights Directory](./insights/DATA_ANALYSIS.md).
 
 ## 🏗️ Technical Architecture
 * **Bronze Layer (Ingestion):** Raw CSV ingestion of 1.2M records using Spark with strict schema enforcement (avoiding `inferSchema` overhead).
