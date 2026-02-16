@@ -13,20 +13,23 @@ For a detailed breakdown of the trends and data quality observations, see the In
 * **Visual Layer**: An interactive Gradio dashboard providing real-time insights into music trends via Plotly.
 
 ## 🏗️ System Architecture
+```mermaid
 graph TD
-A[(Raw CSV)] -->|Spark Ingestion| B(Bronze: Parquet)
-B -->|Spark Transformation| C(Silver: Partitioned Parquet)
-C -->|Analytical Aggregation| D(Gold: DuckDB)
-D -->|SQL Query| E[Gradio Dashboard]
-subgraph ProcLayer [Processing Layer - Heavy Lift]
-    B
-    C
-end
+    A[(Raw CSV)] -->|Spark Ingestion| B(Bronze: Parquet)
+    B -->|Spark Transformation| C(Silver: Partitioned Parquet)
+    C -->|Analytical Aggregation| D(Gold: DuckDB)
+    D -->|SQL Query| E[Gradio Dashboard]
 
-subgraph ServeLayer [Serving Layer - Low Latency]
-    D
-    E
-end
+    subgraph ProcLayer [Processing Layer - Heavy Lift]
+        B
+        C
+    end
+
+    subgraph ServeLayer [Serving Layer - Low Latency]
+        D
+        E
+    end
+```
 
 ## 🛠️ Performance & Environment
 | Metric | Spark Direct Query | DuckDB Serving Layer | Improvement |
