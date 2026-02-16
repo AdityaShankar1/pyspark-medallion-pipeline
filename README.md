@@ -22,9 +22,9 @@ For a detailed breakdown of the trends and data quality observations, see the [I
 
 ## 📂 How to Run
 1.  **Environment:** Managed via SDKMAN! (Java 17.0.10-tem).
-2.  **ETL:** `python3 spotify_pipeline.py`
-3.  **Serving:** `python3 spotify_gold_insights2.py`
-4.  **UI:** `python3 spotify_dashboard.py`
+2.  **ETL:** `python3 scripts/spotify_pipeline.py`
+3.  **Serving:** `python3 scripts/spotify_gold_insights2.py`
+4.  **UI:** `python3 scripts/spotify_dashboard.py`
 
 ---
 *Developed as a demonstration of scalable data architecture and systems thinking.*
