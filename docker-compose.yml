@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  # The ETL Service (Runs the pipeline then stops)
+  etl_pipeline:
+    build: .
+    volumes:
+      - .:/app
+    command: python3 scripts/spotify_pipeline.py
+
+  # The Dashboard Service (Always available)
+  dashboard:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - .:/app
+    environment:
+      - GRADIO_SERVER_NAME=0.0.0.0
+    command: python3 scripts/spotify_dashboard.py
+    depends_on:
+      - etl_pipeline

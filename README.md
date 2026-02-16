@@ -28,3 +28,8 @@ For a detailed breakdown of the trends and data quality observations, see the [I
 
 ---
 *Developed as a demonstration of scalable data architecture and systems thinking.*
+## 🐳 Docker Quickstart
+To run the entire pipeline and dashboard in a containerized environment:
+```bash
+docker-compose up
+```
