@@ -13,7 +13,9 @@ For a detailed breakdown of the trends and data quality observations, see the In
 * **Visual Layer**: An interactive Gradio dashboard providing real-time insights into music trends via Plotly.
 
 ## 🏗️ System Architecture
+
 ```mermaid
+
 graph TD
     A[(Raw CSV)] -->|Spark Ingestion| B(Bronze: Parquet)
     B -->|Spark Transformation| C(Silver: Partitioned Parquet)
@@ -29,6 +31,7 @@ graph TD
         D
         E
     end
+
 ```
 
 ## 🛠️ Performance & Environment
